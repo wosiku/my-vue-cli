@@ -30,7 +30,7 @@ export default {
     };
   },
   mounted () {
-    
+
   },
   methods: {
     handleDragStart (e, item) {
@@ -65,7 +65,7 @@ export default {
 <style lang="less" scoped>
   .box {
     width: 800px;
-    background: #99999;
+    background: #999;
     display: flex;
     flex-direction: column;
     align-items: center;

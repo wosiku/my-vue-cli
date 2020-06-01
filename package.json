@@ -19,6 +19,7 @@
     "bpmn-js": "^6.5.1",
     "echarts": "^4.4.0",
     "element-ui": "^2.11.1",
+    "jquery": "^3.5.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vue": "^2.5.2",
