@@ -18,6 +18,7 @@ export default {
     };
   },
   mounted () {
+    // github test commit
     this.chart = echarts.init(this.$refs.myEchart);
     // 把配置和数据放这里
     this.chart.setOption({});
