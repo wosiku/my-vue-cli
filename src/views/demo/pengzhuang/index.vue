@@ -30,8 +30,7 @@ export default {
     };
   },
   mounted () {
-    // let obj = {a: 1, b: 2};
-    // console.log(obj.a, obj.c?.d);
+    
   },
   methods: {
     handleDragStart (e, item) {
