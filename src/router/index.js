@@ -30,6 +30,10 @@ export default new Router({
             {
               path: 'selectDay',
               component: resolve => require(['@/views/demo/selectDay/index'], resolve)
+            },
+            {
+              path: 'tableExcel',
+              component: resolve => require(['@/views/demo/tableExcel/index'], resolve)
             }
           ]
         },
