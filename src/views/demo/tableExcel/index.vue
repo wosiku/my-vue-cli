@@ -23,7 +23,7 @@ export default {
           job: '前端开发'
         },
         {
-          name: 'Jarry',
+          name: 'Jerry',
           age: 25,
           sex: '男',
           job: '后端开发'
