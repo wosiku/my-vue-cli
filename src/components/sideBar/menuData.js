@@ -47,6 +47,46 @@ let menuData = [
       }
     ]
   },
+  { // 经典功能
+    'id': '1d45403d892f4d9a9aded0eabfe2521',
+    'title': '经典功能',
+    'icon': 'el-icon-menu',
+    'url': '/home',
+    'menus': [
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': 'bpmn-js 流程图',
+        'url': '/my/bpmnjs',
+        'icon': null,
+        'submenus': null,
+        'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': 'Echarts Demo',
+        'url': '/my/echarts',
+        'icon': null,
+        'submenus': null,
+        'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': '选择天数',
+        'url': '/my/selectDay',
+        'icon': null,
+        'submenus': null,
+        'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': '表格导出EXCEL',
+        'url': '/my/tableExcel',
+        'icon': null,
+        'submenus': null,
+        'items': null
+      }
+    ]
+  },
   { // 营销管理
     'id': 'ae94bb44ad4644258f028b480652aedf7',
     'title': '营销管理',
@@ -181,38 +221,6 @@ let menuData = [
         'id': 'canyindingdan',
         'title': '餐饮订单',
         'url': '/canyindingdan',
-        'icon': null,
-        'submenus': null,
-        'items': null
-      }
-    ]
-  },
-  { // 经典功能
-    'id': '1d45403d892f4d9a9aded0eabfe2521',
-    'title': '经典功能',
-    'icon': 'el-icon-menu',
-    'url': '/home',
-    'menus': [
-      {
-        'id': 'mdmapp-orgmanager2',
-        'title': 'bpmn-js 流程图',
-        'url': '/my/bpmnjs',
-        'icon': null,
-        'submenus': null,
-        'items': null
-      },
-      {
-        'id': 'mdmapp-orgmanager2',
-        'title': 'Echarts Demo',
-        'url': '/my/echarts',
-        'icon': null,
-        'submenus': null,
-        'items': null
-      },
-      {
-        'id': 'mdmapp-orgmanager2',
-        'title': '选择天数',
-        'url': '/my/selectDay',
         'icon': null,
         'submenus': null,
         'items': null
