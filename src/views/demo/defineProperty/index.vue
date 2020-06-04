@@ -15,11 +15,6 @@ export default {
     console.log(process.env.NODE_ENV, 'process.env.NODE_ENV');
     console.log(process.env.USER_COMPUTER_IP, 'process.env.TESTDATA');
     console.log(process, 'process.env.API_HOST');
-    this.instance.regist().then(res => {
-      console.log(res, 'res');
-    }).catch(function (error) {
-      console.log(error);
-    });
   },
   methods: {
     jsonpFn () {

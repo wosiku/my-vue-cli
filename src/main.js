@@ -18,9 +18,6 @@ import Router from 'vue-router';
 import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
 
-import instance_ from '@/assets/js/axiosPlugin.js';
-Vue.prototype.instance = instance_; // axios实例
-
 console.log(this.$router, 'router', router);
 // addRoutes动态添加路由
 router.addRoutes([

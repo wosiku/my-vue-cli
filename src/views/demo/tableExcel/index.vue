@@ -12,6 +12,7 @@
 <script>
 import FileSaver from 'file-saver';
 import XLSX from 'xlsx';
+import * as apis from '@/views/demo/apis/';
 export default {
   data () {
     return {
@@ -30,6 +31,15 @@ export default {
         }
       ]
     };
+  },
+  created () {
+    apis.tencentApi()
+      .then(resData => {
+        console.log(resData, 'resData');
+      })
+      .catch(err => {
+        console.log(err, 'err');
+      });
   },
   methods: {
     exportExcel () {
