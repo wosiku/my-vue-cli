@@ -34,6 +34,10 @@ export default new Router({
             {
               path: 'tableExcel',
               component: resolve => require(['@/views/demo/tableExcel/index'], resolve)
+            },
+            {
+              path: 'blobDownload',
+              component: resolve => require(['@/views/demo/blobDownload/index'], resolve)
             }
           ]
         },

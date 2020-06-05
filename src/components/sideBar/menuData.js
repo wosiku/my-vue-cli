@@ -84,6 +84,14 @@ let menuData = [
         'icon': null,
         'submenus': null,
         'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': 'Blob下载',
+        'url': '/my/blobDownload',
+        'icon': null,
+        'submenus': null,
+        'items': null
       }
     ]
   },
