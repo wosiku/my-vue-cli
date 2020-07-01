@@ -7,6 +7,7 @@
       <el-table-column label="性别" prop="sex"></el-table-column>
       <el-table-column label="职业" prop="job"></el-table-column>
     </el-table>
+    <el-button @click="changeList">改变第一行的名字，无变化，冻结了</el-button>
   </div>
 </template>
 <script>
@@ -16,7 +17,7 @@ import * as apis from '@/views/demo/apis/';
 export default {
   data () {
     return {
-      tableData: [
+      tableData: Object.freeze([
         {
           name: 'Tom',
           age: 24,
@@ -29,7 +30,7 @@ export default {
           sex: '男',
           job: '后端开发'
         }
-      ]
+      ])
     };
   },
   created () {
@@ -42,6 +43,9 @@ export default {
       });
   },
   methods: {
+    changeList () {
+      this.tableData[0].name = '妹妹'; // 值得一提的是，直接赋值会改变tableData
+    },
     exportExcel () {
       var wb = XLSX.utils.table_to_book(document.querySelector('.myTable'));
 
