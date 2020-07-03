@@ -92,6 +92,14 @@ let menuData = [
         'icon': null,
         'submenus': null,
         'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': '百度地图',
+        'url': '/my/baiduMap',
+        'icon': null,
+        'submenus': null,
+        'items': null
       }
     ]
   },

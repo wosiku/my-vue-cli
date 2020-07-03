@@ -38,6 +38,10 @@ export default new Router({
             {
               path: 'blobDownload',
               component: resolve => require(['@/views/demo/blobDownload/index'], resolve)
+            },
+            {
+              path: 'baiduMap',
+              component: resolve => require(['@/views/demo/baiduMap/index'], resolve)
             }
           ]
         },
