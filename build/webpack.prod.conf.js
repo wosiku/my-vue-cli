@@ -10,6 +10,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -30,6 +35,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    new SkeletonWebpackPlugin({
+      webpackConfig: {
+        entry: {
+            app: resolve('./src/skeleton/entry-skeleton.js')
+        }
+      }
+    }),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env

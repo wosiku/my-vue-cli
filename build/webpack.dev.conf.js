@@ -9,6 +9,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+
+function resolve(dir) {
+    return path.join(__dirname, '..', dir)
+}
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -45,6 +50,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new SkeletonWebpackPlugin({
+      webpackConfig: {
+        entry: {
+            app: resolve('./src/skeleton/entry-skeleton.js')
+        }
+      }
+    }),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
