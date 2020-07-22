@@ -33,7 +33,7 @@ export default {
         if (current === start) {
           return;
         }
-        current = start;
+        current = Math.ceil(start);
         ele.innerHTML = current.toString().replace(/(\d)(?=(?:\d{3}[+]?)+$)/g, '$1,');
       }, 10);
     }
