@@ -48,7 +48,14 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        // loader: 'babel-loader',
+        // 把js文件处理交给id为happyBabel的HappyPack的实例执行
+        use: [
+          {
+            loader: 'happypack/loader?id=happyBabel'
+          }
+        ],
+        exclude: /node_modules/,
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
