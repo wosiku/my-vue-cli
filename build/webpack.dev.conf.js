@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -50,6 +51,24 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('./vendor-manifest.json')
+    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [ // 拷贝生成的文件到dist目录 这样每次不必手动去cv
+    //     {from: path.join(__dirname,'static'), to:'static'}
+    //   ]
+    // }),
+    // 有 AddAssetHtmlPlugin ，就不需要 CopyWebpackPlugin 添加手动引入了， AddAssetHtmlPlugin 会自动生成文件并在html里引入，如下
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, './static/js/vendor.dll.js'),
+      // filepath: path.resolve(__dirname, '../dist/static/js/vendor.dll.js'),
+      // outputPath: utils.assetsPath('js'),
+      // publicPath: config.dev.assetsPublicPath,
+      // includeSourcemap: false,
+      // hash: true
+    }),
     new SkeletonWebpackPlugin({
       webpackConfig: {
         entry: {
