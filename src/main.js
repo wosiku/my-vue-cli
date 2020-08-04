@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import store from './store';
 // 解决点击当前面包屑报错问题
 import Router from 'vue-router';
-// import '@/components/js/animation.js';
+import '@/components/js/animation.js';
 
 // import VueQuillEditor from 'vue-quill-editor';
 // import 'quill/dist/quill.core.css';
