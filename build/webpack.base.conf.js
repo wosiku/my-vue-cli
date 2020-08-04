@@ -7,7 +7,6 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const HappyPack = require('happypack')
 const os = require('os')
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -102,10 +101,6 @@ module.exports = {
     child_process: 'empty'
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerHost: '127.0.0.1',
-      analyzerPort: 8889
-    }),
     new HappyPack({
       id: 'happyBabel', // 与loader对应的id标识
       // 用法和loader的配置一样，注意这里是loaders

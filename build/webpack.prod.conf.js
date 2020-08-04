@@ -11,11 +11,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
-// 在webpack构建过程中，实际上耗费时间大多数用在loader解析转换以及代码的压缩中。日常开发中我们需要使用Loader对js，css，图片，字体等文件做转换操作，并且转换的文件数据量也是非常大。由于js单线程的特性使得这些转换操作不能并发处理文件，而是需要一个个文件进行处理。HappyPack的基本原理是将这部分任务分解到多个子进程中去并行处理，子进程处理完成后把结果发送到主进程中，从而减少总的构建时间
-const HappyPack = require('happypack')
-const os = require('os')
-const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -40,36 +35,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    // new webpack.DllReferencePlugin({
-    //   context: __dirname,
-    //   manifest: require('./vendor-manifest.json')
-    // }),
-    // 有 AddAssetHtmlPlugin ，就不需要 CopyWebpackPlugin 添加手动引入了， AddAssetHtmlPlugin 会自动生成文件并在html里引入，如下
-    // new AddAssetHtmlPlugin({
-    //   filepath: path.resolve(__dirname, './static/js/vendor.dll.js'),
-    //   // filepath: path.resolve(__dirname, '../dist/static/js/vendor.dll.js'),
-    //   // outputPath: utils.assetsPath('js'),
-    //   // publicPath: config.dev.assetsPublicPath,
-    //   // includeSourcemap: false,
-    //   // hash: true
-    // }),
-    // new HappyPack({
-    //   id: 'happyBabel', // 与loader对应的id标识
-    //   // 用法和loader的配置一样，注意这里是loaders
-    //   loaders: [
-    //     {
-    //       loader: 'babel-loader',
-    //       options: {
-    //         // 在babelrc上写即可，这里写打包报错
-    //         // presets: [
-    //         //   ['@babel/preset-env']
-    //         // ],
-    //         cacheDirectory: true
-    //       }
-    //     }
-    //   ],
-    //   threadPool: happyThreadPool // 共享进程池
-    // }),
     new SkeletonWebpackPlugin({
       webpackConfig: {
         entry: {
