@@ -2,7 +2,12 @@
   <div id="pieChart" ref="pieChart" :style="{width: width, height: height}"></div>
 </template>
 <script>
-import echarts from 'echarts';
+// import echarts from 'echarts';
+let echarts;
+require.ensure([], function () {
+  echarts = require('echarts');
+});
+console.log(echarts, 'chartsssssssssss');
 export default {
   data () {
     return {
@@ -13,7 +18,9 @@ export default {
     };
   },
   mounted () {
-    this.initChart();
+    setTimeout(() => {
+      this.initChart();
+    }, 300);
   },
   methods: {
     initChart (val = 0, maxData = 10000) {
