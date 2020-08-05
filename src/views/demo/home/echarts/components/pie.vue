@@ -5,11 +5,13 @@
 // import echarts from 'echarts';
 let echarts;
 console.time();
-require.ensure([], function () {
-  echarts = require('echarts');
-  console.timeEnd();
+let echartsPromise = new Promise((resolve, reject) => {
+  require.ensure([], function () {
+    echarts = require('echarts');
+    console.timeEnd();
+    resolve();
+  });
 });
-console.log(echarts, 'chartsssssssssss');
 export default {
   data () {
     return {
@@ -20,10 +22,8 @@ export default {
     };
   },
   mounted () {
-    // require.ensure引入大约要两百毫秒，到mounted大约100毫秒，故要加延时器
-    setTimeout(() => {
-      this.initChart();
-    }, 300);
+    // require.ensure引入echarts大概要200毫秒，而到mounted只要100毫秒，拿不到echarts。故加promise
+    echartsPromise.then(() => this.initChart()).catch(err => console.log(err));
   },
   methods: {
     initChart (val = 0, maxData = 10000) {
