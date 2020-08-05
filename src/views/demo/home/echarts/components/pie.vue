@@ -4,8 +4,10 @@
 <script>
 // import echarts from 'echarts';
 let echarts;
+console.time();
 require.ensure([], function () {
   echarts = require('echarts');
+  console.timeEnd();
 });
 console.log(echarts, 'chartsssssssssss');
 export default {
@@ -18,6 +20,7 @@ export default {
     };
   },
   mounted () {
+    // require.ensure引入大约要两百毫秒，到mounted大约100毫秒，故要加延时器
     setTimeout(() => {
       this.initChart();
     }, 300);
