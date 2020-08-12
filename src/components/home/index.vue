@@ -9,13 +9,13 @@
       </div>
       <!-- 内容区域 -->
       <div class="container">
-        <div class="containerWrap">
-          <!-- 面包屑 -->
+        <!-- 面包屑 -->
+        <div class="breadNav">
           <breadNav></breadNav>
-          <!-- 面包屑以下 -->
-          <div style="padding: 30px;">
-            <router-view></router-view>
-          </div>
+        </div>
+        <!-- 面包屑以下 -->
+        <div class="contentArea">
+          <router-view class="routerView"></router-view>
         </div>
       </div>
     </div>
@@ -57,12 +57,21 @@ export default {
       .container {
         border: 1px solid #eee;
         flex: 1;
+        display: flex;
+        flex-direction: column;
         height: 100%;
+        min-width: 800px;
+        min-height: 500px;
         overflow: auto;
         background: #F7F9FF;
-        .containerWrap {
-          min-width: 800px;
-          min-height: 500px;
+        .breadNav {
+          height: auto;
+        }
+        .contentArea {
+          flex: 1;
+          .routerView {
+            height: 100%;
+          }
         }
       }
     }

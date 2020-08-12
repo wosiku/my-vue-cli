@@ -42,6 +42,10 @@ export default new Router({
             {
               path: 'baiduMap',
               component: resolve => require(['@/views/demo/baiduMap/index'], resolve)
+            },
+            {
+              path: 'lock',
+              component: resolve => require(['@/views/demo/lock/index'], resolve)
             }
           ]
         },

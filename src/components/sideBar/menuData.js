@@ -100,6 +100,14 @@ let menuData = [
         'icon': null,
         'submenus': null,
         'items': null
+      },
+      {
+        'id': 'mdmapp-orgmanager2',
+        'title': '锁屏',
+        'url': '/my/lock',
+        'icon': null,
+        'submenus': null,
+        'items': null
       }
     ]
   },
