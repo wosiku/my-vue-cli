@@ -45,7 +45,7 @@ export default new Router({
             },
             {
               path: 'lock',
-              component: resolve => require(['@/views/demo/lock/index'], resolve)
+              component: resolve => require(['@/components/lock/index'], resolve)
             }
           ]
         },
@@ -114,7 +114,7 @@ export default new Router({
     },
     {
       path: '/lock',
-      component: resolve => require(['@/views/demo/lock/index'], resolve)
+      component: resolve => require(['@/components/lock/index'], resolve)
     }
   ]
 });
