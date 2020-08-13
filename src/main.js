@@ -35,13 +35,13 @@ Router.prototype.push = function push (location) {
 router.beforeEach((to, from, next) => {
   // 刷新页面，跳转路由时左侧菜单默认路由能同步显示正确
   store.state.menuActive = to.path;
-
   if (to.matched.length === 0) { // 跳转到没注册的路由则重定向到/404页面
     next('/404');
-    return;
+  } else if (!!localStorage.getItem('isLock') && to.path !== '/lock') { // 锁屏状态
+    next('/lock');
+  } else {
+    next();
   }
-
-  next();
 });
 
 Vue.use(ElementUI);

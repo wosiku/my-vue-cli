@@ -111,6 +111,10 @@ export default new Router({
           component: resolve => require(['@/views/demo/mixins/index'], resolve)
         }
       ]
+    },
+    {
+      path: '/lock',
+      component: resolve => require(['@/views/demo/lock/index'], resolve)
     }
   ]
 });

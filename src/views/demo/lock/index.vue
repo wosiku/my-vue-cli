@@ -3,7 +3,7 @@
     <div class="top">
       <div class="content">
         <img src="./components/image/adminLogo.png" />
-        <b>LANIF</b>
+        <b>WOSIKU</b>
         <span>Adimn</span>
       </div>
     </div>
@@ -71,6 +71,7 @@ export default {
     };
   },
   mounted () {
+    localStorage.setItem('isLock', true);
     this.lock = new PatternLock(this.$refs.patternLock, {
       enableSetPattern: true
     });
@@ -109,7 +110,8 @@ export default {
     },
     onChange (lock) {
       if (lock) {
-        alert('解锁成功');
+        localStorage.clear('isLock');
+        this.$router.push('/home');
       } else {
         // alert('解锁失败');
         this.isAnimation = true;

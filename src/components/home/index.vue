@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <!-- 头部 -->
-    <div class="header">平台</div>
+    <div class="header">
+      <prelude></prelude>
+    </div>
     <div class="content">
       <!-- 侧边栏 -->
       <div class="sidebar">
@@ -22,11 +24,12 @@
   </div>
 </template>
 <script>
+import prelude from './../header/index';
 import sideBar from './../sideBar/index';
 import breadNav from './../breadNav/index';
 export default {
   name: 'index',
-  components: { sideBar, breadNav },
+  components: { prelude, sideBar, breadNav },
   watch: {
   }
 };
@@ -41,9 +44,9 @@ export default {
     flex-direction: column;
     .header {
       height: 74px;
-      line-height: 74px;
+      // line-height: 74px;
       background: #fff;
-      font-size: 30px;
+      // font-size: 30px;
     }
     .content {
       flex: 1;
