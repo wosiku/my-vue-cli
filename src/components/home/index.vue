@@ -17,7 +17,9 @@
         </div>
         <!-- 面包屑以下 -->
         <div class="contentArea">
-          <router-view class="routerView"></router-view>
+          <transition name="fade-transform" mode="out-in">
+            <router-view class="routerView"></router-view>
+          </transition>
         </div>
       </div>
     </div>
@@ -35,18 +37,30 @@ export default {
 };
 </script>
 <style scoped lang="less">
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
   .home {
     width: 100%;
     height: 100%;
-    // min-width: 900px;
-    // min-height: 600px;
     display: flex;
     flex-direction: column;
     .header {
       height: 74px;
-      // line-height: 74px;
       background: #fff;
-      // font-size: 30px;
     }
     .content {
       flex: 1;
@@ -54,7 +68,6 @@ export default {
       overflow: hidden;
       .sidebar {
         width: auto;
-        // min-width: 150px;
         height: 100%;
       }
       .container {
@@ -72,6 +85,7 @@ export default {
         }
         .contentArea {
           flex: 1;
+          // overflow: hidden;
           .routerView {
             height: 100%;
           }
